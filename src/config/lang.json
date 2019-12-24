@@ -1,0 +1,62 @@
+{
+  "中文": {
+    "header": [
+      {
+        "id": "file",
+        "text": "文件",
+        "items": [
+          "新建文件",
+          "打开文件",
+          "保存文件",
+          "关闭文件"
+        ]
+      },
+      {
+        "id": "config",
+        "text": "设置",
+        "items": [
+          "用户代码",
+          "编辑器主题",
+          "选项列表"
+        ]
+      },
+      {
+        "id": "language",
+        "text": "语言/Lanuages",
+        "items": [
+          "中文",
+          "English"
+        ]
+      }
+    ]
+  },
+  "English": {
+    "header": [
+      {
+        "id": "file",
+        "text": "File",
+        "items": [
+          "Open File",
+          "Close File"
+        ]
+      },
+      {
+        "id": "config",
+        "text": "User Snippets",
+        "items": [
+          "User Snippets",
+          "Editor Theme",
+          "Optional List"
+        ]
+      },
+      {
+        "id": "language",
+        "text": "语言/Lanuages",
+        "items": [
+          "中文",
+          "English"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+#module-panel {
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .title h3 {
+    margin: 0;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+  }
+  .input-wrap {
+    position: relative;
+    .form-control {
+      outline: none;
+      box-shadow: 0;
+    }
+    .search-result-list {
+      position: absolute;
+      top: 34px;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      padding: 0;
+      background-color: #fff;
+      border: 1px solid #e8e8e8;
+      overflow: auto;
+      display: none;
+      li {
+        list-style: none;
+        padding: 6px;
+        a {
+          display: block;
+          border-bottom: 1px solid #e8e8e8;
+        }
+
+      }
+    }
+  }
+  .panel {
+    margin: 0;
+    &-group {
+      width: 100%;
+      margin-bottom: 0;
+      overflow: scroll;
+      background-color: #ccc;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .popover-span {
+      position: absolute;
+      right: 0;
+      font-size: 12px;
+      top: 0;
+      padding: 10px 15px;
+      z-index: 2;
+    }
+    .panel-heading{
+      padding: 0;
+      a {
+        display: block;
+        padding: 6px;
+        font-size: 14px;
+      }
+    }
+    .list-group {
+      padding: 0;
+      &-item {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<input type="file" id="file-input" style="display: none">
+<header id="module-header">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default row">
+            <ul class="nav nav-pills">
+                <%
+                    data.navItems.forEach(item => {
+                %>
+                    <li role="presentation">
+                        <%
+                            if (typeof item.items === 'undefined') {
+                        %>
+                                <a href="#" class="dropdown-toggle" onclick="<%= `modules.header.${item.fn}(event)` %>"><%= item.text %></a>
+                        <%
+                            } else {
+                        %>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <%= item.text %> <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" onclick="<%= `modules.header.${item.fn}(this, event)` %>">
+                                    <%
+                                        item.items.forEach(dItem => {
+                                    %>
+                                            <li><a href="#" data-fn="<%= dItem.fn %>"><%= dItem.text %></a></li>
+                                    <%
+                                        })
+                                    %>
+                                </ul>
+                        <%
+                            }
+                        %> 
+                    </li>
+                <%
+                    })
+                %>
+            </ul>
+        </nav>
+    </div>  
+</header>

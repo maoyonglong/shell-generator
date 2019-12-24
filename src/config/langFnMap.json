@@ -1,0 +1,16 @@
+{
+    "header": {
+        "file": {
+            "fn": "dispatch",
+            "items": [ "newFile", "openFile", "saveFile", "closeFile" ]
+        },
+        "config": {
+            "fn": "dispatch",
+            "items": [ "setSnippets", "setEditorTheme", "setOptionalList" ]
+        },
+        "language": {
+            "fn": "dispatch",
+            "items": [ "setLang", "setLang" ]
+        }
+    }
+}

@@ -1,0 +1,55 @@
+<div id="module-panel">
+    <hgroup class="title bg-info">
+        <h3><%= data.title %></h3>
+    </hgroup>
+    <div class="input-group col-sm-12">
+        <div class="input-wrap clearfix">
+          <input type="text" class="form-control" placeholder="Search...">
+          <ul class="search-result-list"></ul>
+        </div>
+        <div class="panel-group" id="accordion">
+            <%
+                let count = 0
+                function escapeHtml (text) {
+                  return text.replace(/[<>"&]/g, match => {
+                    switch (match) {
+                      case '<': return '&lt;'
+                      case '>': return '&gt;'
+                      case '&': return '&amp;'
+                      case '\\': return '&quot;'
+                    }
+                  })
+                }
+                for (let [ group, items ] of Object.entries(data.groups)) {
+                    count++
+            %>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" 
+                            href="<%= `#collapse${count}` %>">
+                                <%= group %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="<%= `collapse${count}` %>" class="panel-collapse collapse">
+                        <ul class="panel-body list-group">
+                            <%
+                                items.forEach(item => {
+                            %>
+                                <li class="list-group-item">
+                                  <span class="comm"><%= item.label %></span>
+                                  <span class="popover-span" data-container="body" data-toggle="popover" title="详细内容" data-content="<%= escapeHtml(item.documentation) %>">悬停显示详细信息</span>
+                                </li>
+                            <%
+                              })
+                            %>
+                        </ul>
+                    </div>
+                </div>
+            <%
+                }
+            %>
+        </div>
+    </div>
+</div>

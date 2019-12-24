@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <%= require('./modules/head/head.ejs')() %>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <%=
+          require('./modules/header/header.ejs')({
+              navItems: data.header
+          })
+      %>
+      <section class="main row">
+          <section class="main-left col-md-10 col-sm-12">
+              <%= require('./modules/editor/editor.ejs')() %>
+          </section>
+          <section class="main-right col-md-2 hidden-sm hidden-xs">
+              <%=
+                  require('./modules/panel/panel.ejs')({ 
+                      title: data.panel.title,
+                      groups: data.panel.groups
+                  })
+              %>
+          </section>
+      </section>
+      <%= require('./modules/footer/footer.ejs')() %>
+    </div>
+  </div>
+  <%= require('./modules/modal/modal.ejs')() %>
+</body>
+</html>
